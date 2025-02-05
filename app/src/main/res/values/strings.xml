@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Super!Market</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="rate">RATE</string>
+    <string name="enter_supermarket_name">Enter Supermarket name</string>
+    <string name="state">State</string>
+    <string name="super_market">Super!Market</string>
+    <string name="supermarket">SuperMarket:</string>
+    <string name="address">Address:</string>
+    <string name="home">Home</string>
+    <string name="save">Save</string>
+    <string name="ease_of_checkout_rating">Ease Of Checkout Rating</string>
+    <string name="liquor_department_rating">Liquor Department Rating</string>
+    <string name="produce_department_rating">Produce Department Rating</string>
+    <string name="meat_department_rating">Meat Department Rating</string>
+    <string name="cheese_selection_rating">Cheese Selection Rating</string>
+    <string name="rating">Average Rating: %1$.2f/5</string>
 </resources>
