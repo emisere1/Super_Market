@@ -23,6 +23,22 @@ public class RatingDataSource {
     public void close(){
         dbHelper.close();
     }
+    public boolean checkRating(String m, String a){
+        boolean didSucceed = false;
+        try{
+            String query = "Select * from rating where market = '" + m + "' and marketaddress = '" + a + "'";
+            Cursor cursor = database.rawQuery(query, null);
+
+            if(cursor.getCount() > 0){
+                didSucceed = true;
+            }
+            cursor.close();
+        }
+        catch (Exception e){
+            didSucceed = false;
+        }
+        return didSucceed;
+    }
 
     public boolean insertRating(Rating r){
         boolean didSucceed = false;
@@ -43,6 +59,21 @@ public class RatingDataSource {
 
         }
         return didSucceed;
+    }
+    public long getRatingId(String m, String a){
+        long id = -1;
+        try{
+            String query = "Select _id from rating where market = '" + m + "' and marketaddress = '" + a + "'";
+            Cursor cursor = database.rawQuery(query, null);
+
+            cursor.moveToFirst();
+            id = cursor.getLong(0);
+            cursor.close();
+        }
+        catch (Exception e){
+            id = -1;
+        }
+        return id;
     }
     public boolean updateRating(Rating r){
         boolean didSucceed = false;
